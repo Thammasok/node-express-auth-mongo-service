@@ -1,12 +1,12 @@
 import logger from '@/boot/logger'
 import { NextFunction, Response } from 'express'
-import * as jwt from '@/libs/jwt'
+import RequestWithAccount from '@/boot/express.dto'
 import config from '@/config'
+import * as jwt from '@/libs/jwt'
 import { StatusCodes } from 'http-status-codes'
 import { JwtPayload } from 'jsonwebtoken'
-import RequestWithAccount from '@/boot/express.dto'
 import { getAccountById } from '@/api/account/repositories/account.repository'
-import { getAuthSessionsActiveByAccountIdAndDeviceId } from '@/api/auth-session/auth-session.repository'
+import { getAuthSessionsActiveByAccountIdAndDeviceId } from '@/api/auth-session/repositories/auth-session.repository'
 
 const LOGGER_NAME = 'AUTH_MIDDLEWARE:'
 
@@ -102,7 +102,7 @@ export const authRefreshMiddleware = async (
         message: 'Device id not found',
       })
     }
-    
+
     if (data.sub === 'refresh_token') {
       const isAuthSessionActive =
         await getAuthSessionsActiveByAccountIdAndDeviceId({
