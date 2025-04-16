@@ -15,7 +15,7 @@ export const getSessionLists = async (
     if (account) {
       const sessions =
         await AuthSessionRepository.getAuthSessionsAllByAccountId({
-          accountId: account.id,
+          accountId: account._id,
           page: Number(page),
           limit: Number(limit),
         })
@@ -47,7 +47,7 @@ export const deactivateAuthSession = async (
 
     await AuthSessionRepository.deactivateAuthSessionByAccountIdAndSessionId({
       sessionId,
-      accountId: account.id,
+      accountId: account._id,
       deviceId: deviceId as string,
     })
 

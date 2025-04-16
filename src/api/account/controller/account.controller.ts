@@ -14,7 +14,7 @@ export const getAccountProfile = async (
 
     if (account) {
       const accountInfo = await AccountRepository.getAccountProfileById(
-        account.id,
+        account._id,
       )
 
       let accountFilter = {}
@@ -49,7 +49,7 @@ export const updateAccountImageUrl = async (
 
     if (account) {
       const updated = await AccountRepository.updateAccountImageUrl({
-        accountId: account.id,
+        accountId: account._id,
         image: body.image,
       })
 

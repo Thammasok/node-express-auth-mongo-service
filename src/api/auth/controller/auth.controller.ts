@@ -88,7 +88,7 @@ export const logout = async (
     const account = req.account
 
     await AuthSessionRepository.deactivateAuthSessionByAccountIdAndDeviceId({
-      accountId: account.id,
+      accountId: account._id,
       deviceId: deviceId as string,
     })
 
@@ -204,7 +204,7 @@ export const refreshToken = async (
   try {
     const account = req.account
     if (account) {
-      const token = await AuthService.newToken(account.id)
+      const token = await AuthService.newToken(account._id)
 
       return res.status(StatusCodes.OK).json({
         token: token,
