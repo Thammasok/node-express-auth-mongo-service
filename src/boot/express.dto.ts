@@ -1,8 +1,8 @@
 import { Request } from 'express'
-import { AccountDto } from '@/api/account/account.dto'
+import { IAccountDocument } from '@/api/account/models/account.model'
 
 interface RequestWithAccount extends Request {
-  account: AccountDto
+  account: IAccountDocument
   file?: Express.Multer.File
 }
 
