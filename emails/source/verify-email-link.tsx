@@ -39,14 +39,36 @@ export const VerifyEmailViaLink = () => (
         <Text
           style={{
             ...text,
+            color: '#333',
+            marginTop: '16px',
+            marginBottom: '10px',
+          }}
+        >
+          This link will expire in 24 hours for security reasons.
+        </Text>
+        <Text
+          style={{
+            ...text,
             color: '#ababab',
-            marginTop: '14px',
             marginBottom: '16px',
           }}
         >
-          If you didn&apos;t create an account on our platform, please ignore
-          this email or contact our support team if you have any concerns.
+          If you're having trouble clicking the button, copy and paste the URL
+          below into your web browser:
         </Text>
+        <Link
+          href="{{{link}}}"
+          target="_blank"
+          style={{
+            ...link,
+            display: 'block',
+            marginTop: '16px',
+            marginBottom: '16px',
+          }}
+        >
+          {`{{{link}}}`}
+        </Link>
+
         <svg
           width="76"
           height="24"

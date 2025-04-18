@@ -23,7 +23,8 @@ export const ResetPasswordViaLink = () => (
         <Text style={{ ...text, marginTop: '10px' }}>
           We received a request to reset the password for your account. If you
           didn't make this request, you can safely ignore this email.
-          <br />
+        </Text>
+        <Text style={{ ...text, marginTop: '10px', marginBottom: '16px' }}>
           To reset your password, click on the button below:
         </Text>
         <Link
@@ -40,13 +41,20 @@ export const ResetPasswordViaLink = () => (
         <Text
           style={{
             ...text,
-            color: '#ababab',
-            marginTop: '14px',
+            color: '#333',
+            marginTop: '16px',
             marginBottom: '10px',
           }}
         >
           This link will expire in 24 hours for security reasons.
-          <br />
+        </Text>
+        <Text
+          style={{
+            ...text,
+            color: '#ababab',
+            marginBottom: '16px',
+          }}
+        >
           If you're having trouble clicking the button, copy and paste the URL
           below into your web browser:
         </Text>
@@ -56,22 +64,13 @@ export const ResetPasswordViaLink = () => (
           style={{
             ...link,
             display: 'block',
+            marginTop: '16px',
             marginBottom: '16px',
           }}
         >
           {`{{{resetUrl}}}`}
         </Link>
-        <Text
-          style={{
-            ...text,
-            color: '#ababab',
-            marginTop: '14px',
-            marginBottom: '16px',
-          }}
-        >
-          If you have any questions or concerns, please don't hesitate to
-          contact our support team.
-        </Text>
+
         <svg
           width="76"
           height="24"

@@ -18,9 +18,7 @@ export const VerifyEmailViaOTP = () => (
       <Preview>Verify Your Email Address</Preview>
       <Container style={container}>
         <Heading style={h1}>OTP Email Address</Heading>
-        <Text style={{ ...text, marginTop: '10px' }}>
-          Hello,
-        </Text>
+        <Text style={{ ...text, marginTop: '10px' }}>Hello,</Text>
         <Text style={{ ...text, marginTop: '10px' }}>
           {`Thank you for signing up! To complete your registration and verify
           your email address ({{email}}), please use the following OTP
@@ -31,19 +29,35 @@ export const VerifyEmailViaOTP = () => (
           style={{
             ...text,
             color: '#ababab',
-            marginTop: '14px',
-            marginBottom: '16px',
+            marginTop: '16px',
+            marginBottom: '10px',
           }}
         >
           Enter this code on our website to verify your email address and
           activate your account.
-          <br />
+        </Text>
+        <Text
+          style={{
+            ...text,
+            color: '#ababab',
+            marginTop: '10px',
+            marginBottom: '16px',
+          }}
+        >
           This code will expire in 10 minutes. If you don't verify your email
           within this time, you may need to request a new verification code.
-          <br />
+        </Text>
+        {/* <Text
+          style={{
+            ...text,
+            color: '#ababab',
+            marginTop: '10px',
+            marginBottom: '16px',
+          }}
+        >
           If you didn't create an account on our platform, please ignore this
           email or contact our support team if you have any concerns.
-        </Text>
+        </Text> */}
 
         <svg
           width="76"
