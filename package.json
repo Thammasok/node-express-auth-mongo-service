@@ -26,9 +26,12 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "email:dev": "email dev",
+    "email:export": "email export --dir ./emails/source --outDir ./emails/html --pretty"
   },
   "dependencies": {
+    "@react-email/components": "^0.0.36",
     "@sendgrid/mail": "^8.1.4",
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
@@ -50,6 +53,9 @@
     "morgan": "~1.9.1",
     "multer": "^1.4.5-lts.1",
     "otp-generator": "^4.0.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-email": "^4.0.7",
     "redis": "^4.7.0",
     "ts-node-dev": "^2.0.0",
     "uuid": "^10.0.0",
@@ -76,6 +82,8 @@
     "@types/multer-s3": "^3.0.3",
     "@types/node": "^20.12.7",
     "@types/otp-generator": "^4.0.2",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
     "@types/supertest": "^6.0.2",
     "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
