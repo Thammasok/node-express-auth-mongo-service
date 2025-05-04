@@ -12,7 +12,6 @@ const errorMiddleware = (
 
   return response.status(status).send({
     message,
-    status,
   })
 }
 
