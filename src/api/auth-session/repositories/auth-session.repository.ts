@@ -66,7 +66,7 @@ export const deactivateAuthSession = async (id: string) => {
     const session = await AuthSessionModel.findByIdAndUpdate(
       id,
       {
-        isActive: EAuthSessionStatus.DEACTIVATE,
+        status: EAuthSessionStatus.DEACTIVATE,
       },
       { new: true },
     )
@@ -93,7 +93,7 @@ export const deactivateAuthSessionByAccountIdAndDeviceId = async ({
         deviceId,
       },
       {
-        isActive: EAuthSessionStatus.DEACTIVATE,
+        status: EAuthSessionStatus.DEACTIVATE,
       },
       { new: true },
     )
@@ -118,12 +118,12 @@ export const deactivateAuthSessionByAccountIdAndSessionId = async ({
   try {
     const session = await AuthSessionModel.updateMany(
       {
-        id: sessionId,
+        _id: sessionId,
         accountId,
         $ne: { deviceId },
       },
       {
-        isActive: EAuthSessionStatus.DEACTIVATE,
+        status: EAuthSessionStatus.DEACTIVATE,
       },
       { new: true },
     )
@@ -196,7 +196,7 @@ export const getAuthSessionsActiveByAccountId = async (accountId: string) => {
   try {
     const sessions = await AuthSessionModel.find({
       accountId,
-      isActive: EAuthSessionStatus.ACTIVE,
+      status: EAuthSessionStatus.ACTIVE,
     }).sort({
       createdAt: 1, // sort by createdAt asc
     })
@@ -220,7 +220,7 @@ export const getAuthSessionsActiveByAccountIdAndDeviceId = async ({
     const sessions = await AuthSessionModel.find({
       accountId,
       deviceId,
-      isActive: EAuthSessionStatus.ACTIVE,
+      status: EAuthSessionStatus.ACTIVE,
     }).sort({
       createdAt: 1, // sort by createdAt asc
     })

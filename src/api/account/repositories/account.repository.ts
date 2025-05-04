@@ -9,7 +9,7 @@ const LOGGER_NAME = 'ACCOUNT_REPO:'
 export const getAccountById = async (id: string) => {
   try {
     const account = await AccountModel.findOne({
-      id: id,
+      _id: id,
       isRemove: 0,
     })
 
@@ -25,7 +25,7 @@ export const getAccountProfileById = async (id: string) => {
   try {
     const account = await AccountModel.findOne(
       {
-        id: id,
+        _id: id,
         isRemove: 0,
       },
       {
@@ -65,7 +65,7 @@ export const updateAccountImageUrl = async ({
   try {
     const account = await AccountModel.updateOne(
       {
-        id: accountId,
+        _id: accountId,
       },
       {
         image,
